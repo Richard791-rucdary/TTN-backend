@@ -20,6 +20,11 @@ func calculateNounAloneScore(write http.ResponseWriter, read *http.Request) {
 		json.NewEncoder(write).Encode(map[string]string{"err": "the size of your words are too big."})
 		return
 	}
+	if read.Method == "OPTIONS" {
+		write.WriteHeader(http.StatusOK)
+		return
+	}
+
 	type parsed struct {
 		Cat    string `json:"cat"`
 		Word   string `json:"word"`
