@@ -64,10 +64,10 @@ func calculateNounAloneScore(w http.ResponseWriter, r *http.Request) {
 
 	for _, item := range input {
 		body := map[string]interface{}{
-			"model": "llama-3.1-8b-instant",
+			"model": "openai/gpt-oss-20b",
 			"messages": []map[string]string{
 				{
-					"role": "system",
+					"role":    "system",
 					"content": "Respond with exactly one word: true or false. No explanation.",
 				},
 				{
