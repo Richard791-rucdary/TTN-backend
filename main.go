@@ -68,7 +68,7 @@ func calculateNounAloneScore(w http.ResponseWriter, r *http.Request) {
 			"messages": []map[string]string{
 				{
 					"role":    "system",
-					"content": "Respond with exactly one word: true or false. No explanation.",
+					"content": "Respond with exactly one word: true or false. No explanation. Be very strict with answers, confirm only dictionary proven words.",
 				},
 				{
 					"role": "user",
